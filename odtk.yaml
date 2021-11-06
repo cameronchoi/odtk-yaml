@@ -16,6 +16,9 @@ spec:
       containers:
       - name: odtk-container
         image: minibeast-ubuntu16:443/odtk:latest
+        resources:
+          limits:
+            nvidia.com/gpu: 6
         volumeMounts:
           - name: nfs
             mountPath: "/coco"
