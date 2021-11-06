@@ -4,7 +4,6 @@ metadata:
   name: odtk-deployment
   namespace: default
 spec:
-  hostIPC: true
   replicas: 1
   selector:
     matchLabels:
