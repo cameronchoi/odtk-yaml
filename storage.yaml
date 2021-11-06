@@ -1,0 +1,17 @@
+apiVersion: storage.k8s.io/v1
+kind: StorageClass
+metadata:
+  name: smb
+provisioner: smb.csi.k8s.io
+parameters:
+  source: "//192.168.128.43/datasets"
+  csi.storage.k8s.io/node-stage-secret-name: "soren"
+  csi.storage.k8s.io/node-stage-secret-namespace: "default"
+  createSubDir: "false"    # optional: create a sub dir for new volume
+reclaimPolicy: Retain      # only Retain is supported
+volumeBindingMode: Immediate
+mountOptions:
+  - dir_mode=0777
+  - file_mode=0777
+  - uid=1001
+  - gid=1001
