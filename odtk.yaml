@@ -13,6 +13,7 @@ spec:
       labels:
         bb: web
     spec:
+      hostIPC: true
       containers:
       - name: odtk-container
         image: minibeast-ubuntu16:443/odtk:latest
