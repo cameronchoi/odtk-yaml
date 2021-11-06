@@ -34,16 +34,10 @@ spec:
                 - '002'
                 - '003'
                 - '004'
-  volumeClaimTemplates:
-    - metadata:
-        name: smb
-        annotations:
-          volume.beta.kubernetes.io/storage-class: smb
-      spec:
-        accessModes: ["ReadWriteMany"]
-        resources:
-          requests:
-            storage: 50Gi
+      volumes:
+        - name: smb
+          persistentVolumeClaim:
+            claimName: pvc-smb
 ---
 apiVersion: v1
 kind: Service
