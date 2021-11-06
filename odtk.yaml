@@ -16,17 +16,14 @@ spec:
       containers:
       - name: odtk-container
         image: minibeast-ubuntu16:443/odtk:latest
-<<<<<<< HEAD
         resources:
           limits:
-            nvidia.com/gpu: 1
-=======
->>>>>>> parent of 8175755 (Try with added resource)
+            nvidia.com/gpu: 6
         volumeMounts:
           - name: nfs
             mountPath: "/coco"
         command: ["/bin/sh"]
-        args: ["-c", "ls /coco/images &> /coco/logs/test2.log"]
+        args: ["-c", "odtk train /coco/models/test.pth --backbone ResNet50FPN --images /coco/images/train2017/ --annotations /coco/annotations/instances_train2017.json --val-images /coco/images/val2017/ --val-annotations /coco/annotations/instances_val2017.json &> /coco/logs/test.log"]
       priorityClassName: high-priority
       affinity:
         nodeAffinity:
