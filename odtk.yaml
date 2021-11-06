@@ -28,7 +28,7 @@ spec:
           - name: nfs
             mountPath: "/coco"
         command: ["/bin/sh"]
-        args: ["-c", "odtk train /coco/models/test.pth --backbone ResNet50FPN --batch 12 --images /coco/images/train2017/ --annotations /coco/annotations/instances_train2017.json --val-images /coco/images/val2017/ --val-annotations /coco/annotations/instances_val2017.json &> /coco/logs/test.log"]
+        args: ["-c", "odtk train /coco/models/test.pth --backbone ResNet50FPN --batch 12 --logdir /coco/runs --images /coco/images/train2017/ --annotations /coco/annotations/instances_train2017.json --val-images /coco/images/val2017/ --val-annotations /coco/annotations/instances_val2017.json &> /coco/logs/test.log"]
       priorityClassName: high-priority
       affinity:
         nodeAffinity:
