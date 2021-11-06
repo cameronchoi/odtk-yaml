@@ -20,10 +20,10 @@ spec:
         resources:
           requests:
             nvidia.com/gpu: 6
-            memory: 64Gi
+            memory: 128Gi
           limits:
             nvidia.com/gpu: 6
-            memory: 64Gi
+            memory: 128Gi
         volumeMounts:
           - name: nfs
             mountPath: "/coco"
