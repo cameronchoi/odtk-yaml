@@ -17,10 +17,10 @@ spec:
       - name: odtk-container
         image: minibeast-ubuntu16:443/odtk:latest
         volumeMounts:
-          - name: smb
-            mountPath: "/datasets/smb"
+          - name: nfs
+            mountPath: "/coco"
         command: ["/bin/sh"]
-        args: ["-c", "echo Testing from cam > /datasets/smb/pub/coco/logs/out.txt"]
+        args: ["-c", "echo Testing from cam > /coco/logs/out.txt"]
       priorityClassName: high-priority
       affinity:
         nodeAffinity:
@@ -35,9 +35,9 @@ spec:
                 - '003'
                 - '004'
       volumes:
-        - name: smb
+        - name: nfs
           persistentVolumeClaim:
-            claimName: pvc-smb
+            claimName: pvc-nfs
 ---
 apiVersion: v1
 kind: Service
