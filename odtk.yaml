@@ -20,7 +20,7 @@ spec:
         resources:
           requests:
             nvidia.com/gpu: 6
-            memory: 128Gi
+            memory: 64Gi
           limits:
             nvidia.com/gpu: 6
             memory: 128Gi
