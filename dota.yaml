@@ -19,11 +19,11 @@ spec:
         image: minibeast-ubuntu16:443/r3det:latest
         resources:
           requests:
-            nvidia.com/gpu: 6
-            memory: 64Gi
+            nvidia.com/gpu: 1
+            memory: 20Gi
           limits:
-            nvidia.com/gpu: 6
-            memory: 128Gi
+            nvidia.com/gpu: 1
+            memory: 60Gi
         volumeMounts:
           - name: nfs
             mountPath: "/data/dota"
